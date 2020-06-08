@@ -66,3 +66,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# react-click-counter
+
+## cli
+yarn --dev add enzyme jest-enzyme enzyme-adapter-react-16
+
+### Course Repository on GitHub
+[udemy-react-testing-projects](https://github.com/flyrightsister/udemy-react-testing-projects)
+
+
