@@ -67,12 +67,44 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-# react-click-counter
+# react-tdd-click-counter
 
 ## cli
-yarn --dev add enzyme jest-enzyme enzyme-adapter-react-16
+- $ yarn --dev add enzyme jest-enzyme enzyme-adapter-react-16
+- $ yarn --dev add babel-plugin-react-remove-properties
+- Add `<div data-test="component-app">
+        <div><h1>App</h1></div>
+      </div>` to App.js
+- $ git commit -am 'started testing'
+- $ yarn eject
+- Update babel config in package.json:
+`
+"babel": {
+    "env": {
+      "production": {
+        "plugins": [
+          ["react-remove-properties", {"properties": ["data-test"]}]
+        ]
+      }
+    },
+    "presets": [
+      "react-app"
+    ]
+  }
+  `
+- $ yarn run build // creates a production build
+- $ sudo yarn global add serve [serve](https://www.npmjs.com/package/serve)
+- $ serve -s build // check http://localhost:5000 and see that data-test attribute is now removed
 
 ### Course Repository on GitHub
 [udemy-react-testing-projects](https://github.com/flyrightsister/udemy-react-testing-projects)
+
+### Test tools
+- console.log(wrapper.debug()): 
+[shallowWrapper/debug](https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/debug.html)
+
+- enzyme's ".hasClass()" method: 
+[hasClass](http://airbnb.io/enzyme/docs/api/ShallowWrapper/hasClass.html)
+
 
 
