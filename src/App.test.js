@@ -19,7 +19,7 @@ const setup = (props={}, state=null) => {
   return wrapper;
 }
 /**
- * Retunr ShallowWrapper containing node(s) with the given data-test value.
+ * Return node(s) with the given data-test value.
  * @param {ShallowWrapper} wrapper 
  * @param {string} val - Value of data-test attribute for search
  * @returns {ShallowWrapper}
@@ -106,10 +106,11 @@ describe('decrement', () => {
       const counterDisplay = findByTestAttr(wrapper, 'counter-display');
       expect(counterDisplay.text()).toContain(0);
     
-      // assert error state is true and error message displays
+      // assert error state is true
       const counterDisplayErrorState = wrapper.state('error');
       expect(counterDisplayErrorState).toEqual(true);
     
+      // assert error message displays
       const errorMessage = findByTestAttr(wrapper, 'counter-display-error');
       expect(errorMessage.length).toBe(1);
     });
